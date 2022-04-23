@@ -1,0 +1,65 @@
+@import '../../styles/sass/variables';
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    background-color: $lightGreen;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    [class=container] {
+        width: 80vw;
+        height: inherit;
+        margin: auto;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        [class=card] {
+            width: 450px;
+            height: fit-content;
+            background-color: white;
+            padding: 35px 35px 30px;
+            border-radius: $radius;
+            box-shadow: 0 1px 1px 0 rgb(0 0 0 / 20%);
+
+            h3 {
+                text-align: center;
+                font-weight: normal;
+                text-transform: uppercase;
+                font-size: 14px;
+                letter-spacing: 1px;
+            }
+
+            p {
+                margin-top: 1rem;
+                // padding-top: 1rem;
+                font-size: 14px;
+                text-align: center;
+
+                a {
+                    text-decoration: none;
+                    color: $green;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .page {
+        [class=container] {
+            width: 90vw;
+
+            [class=card] {
+                width: 100%;
+                padding: 20px;
+            }
+        }
+    }
+
+}

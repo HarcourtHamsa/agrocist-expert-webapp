@@ -1,0 +1,10 @@
+@import '../sass/globals';
+
+.btn {
+    @include btn;
+    width: 100%;
+
+    &:hover {
+        cursor: pointer;
+    }
+}

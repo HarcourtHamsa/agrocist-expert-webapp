@@ -1,0 +1,12 @@
+@import './variables';
+
+@mixin btn($backgroundColor: $green,) {
+    font-size: 16px;
+    border: 0;
+    padding-left: 12px;
+    padding-right: 12px;
+    height: 50px;
+    background-color: $backgroundColor;
+    color: white;
+    border-radius: 5px;
+}
