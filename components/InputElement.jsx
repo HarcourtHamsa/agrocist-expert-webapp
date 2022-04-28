@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../styles/sass/input.module.scss";
 
-function InputElement({ type, placeholder, id, name, onChange, value }) {
+function InputElement({ type, placeholder, id, name, onChange, value, rest }) {
   return (
     <>
       <input
@@ -12,6 +12,7 @@ function InputElement({ type, placeholder, id, name, onChange, value }) {
         name={name}
         onChange={onChange}
         value={value}
+        {...rest}
       />
     </>
   );

@@ -1,20 +1,40 @@
-import { useQuery } from "react-query";
 import axios from "axios";
 
 const helpers = {};
 
 helpers.login = (credentials) => {
-  const authenticate = axios
-    .get(` https://agrocist-api-dev.herokuapp.com/api/v1/expert/login`, credentials)
-    .then(({ data }) => data);
-
-  const { isLoading, isError, data, error } = useQuery("login", authenticate);
-
-  if (data) {
-    return data;
+  try {
+    const authenticate = axios
+      .post(
+        ` https://agrocist-api-dev.herokuapp.com/api/v1/expert/login`,
+        credentials
+      )
+      .then(({ data }) => data);
+    return authenticate;
+  } catch (error) {
+    return error;
   }
+};
 
-  if (error) {
+helpers.signup = (credentials) => {
+  const fullname = `${credentials.firstName} ${credentials.lastName} `;
+
+  const data = {
+    ...credentials,
+    fullname,
+  };
+
+  console.log(data);
+
+  try {
+    const authenticate = axios
+      .post(
+        ` https://agrocist-api-dev.herokuapp.com/api/v1/expert/create-account`,
+        data
+      )
+      .then(({ data }) => data);
+    return authenticate;
+  } catch (error) {
     return error;
   }
 };

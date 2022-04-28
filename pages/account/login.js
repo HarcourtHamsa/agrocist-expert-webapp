@@ -5,18 +5,34 @@ import InputElement from "../../components/InputElement";
 import SubmitButton from "../../components/SubmitButton";
 import styles from "../../styles/sass/login.module.scss";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import { useFormik } from "formik";
 import helpers from "../../helpers/helpers";
 
-function login() {
+function Login() {
+  const [isLoading, setIsLoading] = React.useState(false);
+
+  const notify = (type, msg) => toast(msg, { type: type });
+
   const formik = useFormik({
     initialValues: {
       email: "",
       password: "",
     },
 
-    onSubmit: (values) => {
-      console.log(values);
+    onSubmit: async (values) => {
+      try {
+        setIsLoading(true);
+        const res = await helpers.login(values);
+        notify("success", "Login successful");
+        console.log(res);
+      } catch (error) {
+        notify("error", "Wrong email or password");
+      } finally {
+        setIsLoading(false);
+      }
     },
   });
 
@@ -28,6 +44,7 @@ function login() {
       </Head>
 
       <main className={styles.page}>
+        <ToastContainer position="top-center" hideProgressBar={true} />
         <div className={"container"}>
           <div className={"card"}>
             <h3>Login</h3>
@@ -49,11 +66,13 @@ function login() {
                 onChange={formik.handleChange}
                 value={formik.values.password}
               />
-              <SubmitButton label={"Login to your account"} />
+              <SubmitButton
+                label={isLoading ? "Loading..." : "Login to your account"}
+              />
             </form>
 
             <p>
-              New on Angrocist? <Link href="/register">Register</Link>
+              New on Angrocist? <Link href="/account/signup">Register</Link>
             </p>
           </div>
         </div>
@@ -62,4 +81,4 @@ function login() {
   );
 }
 
-export default login;
+export default Login;

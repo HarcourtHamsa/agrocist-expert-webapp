@@ -2,6 +2,9 @@ html,
 body {
   padding: 0;
   margin: 0;
+  line-height: 1.8;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 @font-face {
@@ -10,6 +13,15 @@ body {
   font-weight: 400;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Boing';
+  src: url('../assets/fonts/FontsFree-Net-GD-Boing-Bold.ttf');
+}
+
+/* h1, h2 {
+  font-family: 'Boing' !important;
+} */
 
 * {
   box-sizing: border-box;

@@ -1,0 +1,31 @@
+.card {
+    padding: 12px 24px;
+    width: 330px;
+    height: 436px;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 1px 1px 0 rgb(0 0 0 / 20%);
+
+    [class=image] {
+        height: 40%;
+        width: 100%;
+        border-radius: 12px;
+    }
+
+    [class=flex] {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+    }
+}
+
+@media only screen and (max-width: 948px) {
+    .card {
+        width: 100%;
+
+        [class=image]{
+            background-color: rebeccapurple;
+        }
+    }
+}

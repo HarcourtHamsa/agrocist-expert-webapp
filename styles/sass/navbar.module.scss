@@ -1,0 +1,99 @@
+@import '../sass/variables';
+
+.nav {
+    height: 10vh;
+    width: 100vw;
+    padding-left: 0;
+
+    display: flex;
+    align-items: center;
+
+    [class=container] {
+        width: 80vw;
+        margin: auto;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        [id=logo] {
+            display: flex;
+            align-items: center;
+            transform: scale(.5) translateX(-50%);
+        }
+
+
+        [id=nav-links] {
+            a {
+                text-decoration: none;
+                color: white;
+                margin-left: 1rem;
+
+                &:last-child {
+                    background-color: $yellow;
+                    padding: .5rem 1rem;
+                    border-radius: $radius;
+                }
+            }
+        }
+
+
+        [id=hamburger-menu] {
+            display: none;
+
+            [class=line] {
+                width: 30px;
+                height: 2px;
+                margin: 5px;
+                background-color: white;
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+    }
+}
+
+
+@media only screen and (max-width: 800px) {
+    .nav {
+
+        [class=container] {
+            width: 90vw;
+
+
+            [id=nav-links] {
+                display: none;
+            }
+
+            [class=active] {
+                position: absolute;
+                top: 15vh;
+                width: 90%;
+                background-color: $yellow;
+                z-index: 99999999;
+                height: fit-content;
+                padding: 12px 24px;
+                display: flex;
+                flex-direction: column !important;
+                border-radius: $radius;
+
+                a {
+                    line-height: 3;
+                    color: white;
+
+                    &:last-child {
+                        background-color: initial;
+                        padding: 0;
+                    }
+                }
+            }
+
+            [id=hamburger-menu] {
+                display: block;
+            }
+        }
+    }
+}

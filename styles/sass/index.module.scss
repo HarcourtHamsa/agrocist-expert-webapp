@@ -1,0 +1,387 @@
+@import '../sass/globals';
+@import '../sass/variables';
+
+.header {
+    height: fit-content;
+    background: url('../../assets/images/hero.png') no-repeat center;
+    background-size: cover;
+    color: white;
+
+    [id=jumbotron] {
+        width: 80vw;
+        margin: auto;
+        margin-top: 3rem;
+        height: fit-content;
+
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        align-items: start;
+
+        div {
+            &:first-child {
+
+                h1 {
+                    font-size: 3.5rem;
+                    line-height: 1.5;
+                }
+
+                p {
+                    width: 450px;
+                }
+
+                button {
+                    @include btn;
+                    background-color: $yellow;
+                    margin-top: 1rem;
+                }
+            }
+
+            &:last-child {
+                // background-color: red;
+                transform: scale(.8) translateY(-5%);
+            }
+        }
+
+    }
+}
+
+@media only screen and (max-width: 948px) {
+    .header {
+        [id=jumbotron] {
+            padding: 3rem 0;
+            grid-template-columns: 1fr;
+            width: 90vw;
+            margin: auto;
+
+            div {
+                &:first-child {
+                    order: 2;
+
+                    h1 {
+                        font-size: 2rem;
+                        width: 100%;
+                        margin: auto;
+                    }
+
+                    p {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.section1 {
+    height: fit-content;
+    width: 100vw;
+    padding: 3rem 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    [class=container] {
+        width: 80vw;
+        height: fit-content;
+        margin: auto;
+
+        [class=grid] {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+
+            div {
+                &:first-child {
+                    color: $green;
+
+                    h2 {
+                        font-size: 2.5rem;
+                        line-height: 1.5;
+                        width: 80%;
+                    }
+
+                    p {
+                        width: 70%;
+                    }
+
+                    button {
+                        @include btn;
+                        background-color: $yellow;
+                        margin-top: 1rem;
+                    }
+                }
+
+                &:last-child {
+                    transform: scale(.7);
+                    position: relative;
+
+
+                    &::after {
+                        content: "";
+                        display: block;
+                        width: 450px;
+                        height: 450px;
+                        background-color: $lightBlue;
+                        position: absolute;
+                        top: 30%;
+                        left: -20%;
+                        z-index: -1;
+                        border-radius: 50px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 948px) {
+    .section1 {
+        [class=container] {
+            width: 90vw;
+
+            [class=grid] {
+                grid-template-columns: 1fr;
+
+                div {
+                    &:first-child {
+                        order: 2;
+
+                        h2 {
+                            font-size: 1.75rem;
+                            width: 100% !important;
+                        }
+
+                        p {
+                            width: 100%;
+                        }
+                    }
+
+                    &:last-child {
+                        order: 1;
+
+                        &::after {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.section2 {
+    height: fit-content;
+    width: 100vw;
+    padding: 5rem 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    [class=container] {
+        width: 80vw;
+        height: fit-content;
+        margin: auto;
+
+        [class=grid] {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+
+            div {
+                padding: 12px 24px;
+                transition: .5s;
+                color: $green;
+
+                h3 {
+                    font-weight: normal;
+                    margin-bottom: 0;
+                }
+
+                p {
+                    text-align: initial;
+                    // font-size: 14px;
+                }
+
+                img {
+                    transform: scale(.7);
+                }
+
+                &:hover {
+                    background-color: $green;
+                    color: white;
+                    cursor: pointer;
+                    border-radius: $radius;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 948px) {
+    .section2 {
+        [class=container] {
+            width: 90vw;
+
+            [class=grid] {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}
+
+.section3 {
+    height: fit-content;
+    width: 100vw;
+    padding: 5rem 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    [class=container] {
+        width: 80vw;
+        height: inherit;
+        margin: auto;
+
+        [class=grid] {
+            display: grid;
+            height: inherit;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+
+            align-items: center;
+
+            div {
+                &:first-child {
+                    transform: scale(.8);
+                }
+
+                &:last-child {
+                    color: $green;
+
+                    h2 {
+                        font-size: 2.5rem;
+                        line-height: 1.5;
+                        // width: 80%;
+                    }
+
+                    p {
+                        width: 70%;
+                    }
+
+                    button {
+                        @include btn;
+                        background-color: $yellow;
+                        margin-top: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 948px) {
+    .section3 {
+        [class=container] {
+            width: 90vw;
+
+            [class=grid] {
+                grid-template-columns: 1fr;
+                gap: .5rem;
+
+                div {
+                    &:first-child {
+                        width: 100%;
+                        transform: scale(1);
+                    }
+
+                    &:last-child {
+                        p {
+                            width: 100%;
+
+                        }
+
+                        h2 {
+                            font-size: 1.75rem;
+                            width: 100% !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.section4 {
+    height: fit-content;
+    width: 100vw;
+    padding: 5rem 0;
+    background-color: $peach;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    [class=container] {
+        width: 80vw;
+        height: inherit;
+        margin: auto;
+
+        [class=grid] {
+            display: grid;
+            height: inherit;
+            grid-template-columns: 1fr 2fr;
+            align-items: center;
+            gap: 2rem;
+
+            div {
+                &:first-child {
+                    h2 {
+                        font-size: 2.5rem;
+                        line-height: 1.5;
+                    }
+                }
+
+            }
+
+
+            [class=card-container] {
+                // background-color: green;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 948px) {
+    .section4 {
+        [class=container] {
+            width: 90vw;
+
+            [class=grid] {
+                grid-template-columns: 1fr;
+                gap: .5rem;
+
+                div {
+                    &:first-child {
+                        h2 {
+                            font-size: 1.75rem;
+                            line-height: 1.5;
+                        }
+                    }
+                }
+
+                [class=card-container] {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: 2rem;
+                }
+
+            }
+        }
+    }
+}
