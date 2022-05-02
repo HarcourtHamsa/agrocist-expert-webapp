@@ -1,0 +1,54 @@
+@import './variables';
+
+
+.container {
+    max-width: 75vw;
+    margin: auto;
+
+    h1 {
+        font-size: 1.4rem;
+        // font-size: 14px;
+        letter-spacing: 3px;
+        font-weight: normal;
+        margin-top: 0;
+        padding-bottom: 1rem;
+        text-transform: uppercase;
+        // margin-bottom: 0;
+    }
+}
+
+.col3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+
+
+}
+
+.col2 {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 2rem;
+}
+
+@media only screen and (max-width: 800px) {
+    .container {
+        max-width: 90vw;
+
+        h1 {
+            // font-size: 1.75rem;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+    }
+
+    .col3,
+    .col2 {
+        grid-template-columns: 1fr;
+    }
+
+    .col2 {
+        box-sizing: border-box;
+    }
+
+}

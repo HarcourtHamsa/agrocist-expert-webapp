@@ -14,16 +14,33 @@ body {
   font-style: normal;
 }
 
+
+@font-face {
+  font-family: 'PolySans Bold';
+  src: url('../assets/fonts/PolySans-Median.ef58da6c.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'PolySans';
+  src: url('../assets/fonts/PolySans-Neutral.af255dd7.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
 @font-face {
   font-family: 'Boing';
   src: url('../assets/fonts/FontsFree-Net-GD-Boing-Bold.ttf');
 }
 
-/* h1, h2 {
-  font-family: 'Boing' !important;
-} */
+h1,
+h2 {
+  font-family: 'PolySans Bold' !important;
+}
 
 * {
   box-sizing: border-box;
-  font-family: 'Inter Regular' !important;
+  font-family: 'PolySans' !important;
 }
