@@ -5,7 +5,7 @@ import styles from "../../styles/sass/verify.module.scss";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-export default function () {
+export default function verificationError() {
   const { query } = useRouter();
 
   return (
@@ -46,7 +46,7 @@ export default function () {
             <div className={"card"}>
               <h3>Verification Error</h3>
 
-              <BiError size={35} color="tomato"/>
+              <BiError size={35} color="tomato" />
 
               <p>Due to some reasons, we could not verify your account.</p>
 

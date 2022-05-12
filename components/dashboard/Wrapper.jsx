@@ -40,8 +40,8 @@ function Wrapper({ children }) {
         <ul>
           {NAV_ITEMS.map((item) => {
             return (
-              <li>
-                <Link href={item.href} key={item.label}>
+              <li key={item.label}>
+                <Link href={item.href} passHref>
                   <span className="link-container">
                     {item.icon}
                     {item.label}

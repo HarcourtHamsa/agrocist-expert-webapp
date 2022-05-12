@@ -48,12 +48,12 @@ function Verify() {
             <div className={"card"}>
               <h3>Please verify your email</h3>
               <p>
-                You're almost there! We sent an email to <b>{query.email}</b>
+                You&apos;re almost there! We sent an email to <b>{query.email}</b>
               </p>
 
               <p>
                 Just click on the link in that email to complete your signup. If
-                you don't see it, you may need to <b>check your spam</b> folder
+                you don&apos;t see it, you may need to <b>check your spam</b> folder
               </p>
 
               <p>

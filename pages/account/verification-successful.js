@@ -5,7 +5,7 @@ import styles from "../../styles/sass/verify.module.scss";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-export default function () {
+export default function verificationSuccessful () {
   const { query } = useRouter();
 
   return (
@@ -50,7 +50,7 @@ export default function () {
 
               {/* <p>Your account has been verified</p> */}
 
-              <Link href="/account/login">
+              <Link href="/account/login" passHref>
                 <button>Login</button>
               </Link>
               <p>
