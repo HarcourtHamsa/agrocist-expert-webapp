@@ -16,6 +16,8 @@ import chickens from "../assets/images/chickens.png";
 
 import SocialCard from "../components/SocialCard";
 import Footer from "../components/Footer";
+import React from "react";
+// import Testimanial from "../components/Testimonial";
 
 export default function Home() {
   return (
@@ -142,6 +144,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* <Testimanial /> */}
 
       <Footer />
     </>

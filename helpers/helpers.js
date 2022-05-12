@@ -39,4 +39,23 @@ helpers.signup = (credentials) => {
   }
 };
 
+
+helpers.forgot_password = (obj) => {
+  const { email, notify } = obj;
+
+  try {
+    const res = axios
+      .post(
+        ` https://agrocist-api-dev.herokuapp.com/api/v1/expert/forgot-password`,
+        email
+      )
+      .then(({ data }) => data)
+      .catch((err) => notify("error", "You don't have an account"));
+
+    return res;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export default helpers;

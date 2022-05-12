@@ -55,7 +55,7 @@
 
             div {
                 &:first-child {
-                    order: 2;
+                    order: 1;
 
                     h1 {
                         font-size: 2rem;
@@ -66,6 +66,10 @@
                     p {
                         width: 100%;
                     }
+                }
+
+                &:last-child {
+                    order: 2;
                 }
             }
         }

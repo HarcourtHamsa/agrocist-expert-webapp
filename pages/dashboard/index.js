@@ -8,6 +8,7 @@ import { AiOutlineFileDone } from "react-icons/ai";
 import StatsCard from "../../components/dashboard/StatsCard";
 import AppointmentsCard from "../../components/dashboard/AppointmentsCard";
 import Notifications from "../../components/dashboard/Notifications";
+import WithAuth from "../../HOCs/WithAuth";
 
 function Index() {
   return (
@@ -43,4 +44,4 @@ function Index() {
   );
 }
 
-export default Index;
+export default WithAuth(Index);

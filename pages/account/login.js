@@ -70,7 +70,9 @@ function Login() {
                 label={isLoading ? "Loading..." : "Login to your account"}
               />
             </form>
-
+            <p>
+              <Link href="/account/reset-password">Forgot Password?</Link>
+            </p>
             <p>
               New on Angrocist? <Link href="/account/signup">Register</Link>
             </p>

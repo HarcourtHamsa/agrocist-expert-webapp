@@ -5,7 +5,7 @@ import InputElement from "../../components/InputElement";
 import SubmitButton from "../../components/SubmitButton";
 import styles from "../../styles/sass/signup.module.scss";
 
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 
 import { useFormik } from "formik";
 import helpers from "../../helpers/helpers";
@@ -35,7 +35,15 @@ function Signup() {
         setIsLoading(true);
         const res = await helpers.signup(values);
         notify("success", "Account created successfully");
-        router.push('/account/login')
+        router.push(
+          {
+            pathname: "/account/verify",
+            query: {
+              email: `${values.email}`,
+            },
+          },
+          "/account/verify"
+        );
       } catch (error) {
         console.log(error);
         notify("error", "Oops! an error occured");
