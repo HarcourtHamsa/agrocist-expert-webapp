@@ -5,7 +5,7 @@ import styles from "../../styles/sass/verify.module.scss";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-export default function verificationError() {
+export default function VerificationError() {
   const { query } = useRouter();
 
   return (
