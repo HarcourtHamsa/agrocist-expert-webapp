@@ -1,0 +1,32 @@
+@import './variables';
+
+
+.container {
+    max-width: 75vw;
+    margin: auto;
+    // background-color: red;
+    // margin-top: -3%;
+
+    [class=user-info] {
+        margin-bottom: 2rem;
+
+
+        h1 {
+            font-size: 1.2rem;
+            font-weight: normal;
+            margin-bottom: 0;
+        }
+
+        p {
+            color: gray;
+            margin-top: 0%;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 800px) {
+    .container {
+        max-width: 90vw;
+    }
+}

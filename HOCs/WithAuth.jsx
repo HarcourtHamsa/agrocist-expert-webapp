@@ -7,10 +7,10 @@ const WithAuth = (Component) => {
     if (typeof window !== "undefined") {
       const router = useRouter();
 
-      const token = localStorage.getItem("token");
+      const user = localStorage.getItem("user");
 
-      // if there is no token, redirect to login
-      if (!token) {
+      // if there is no user, redirect to login
+      if (!user) {
         router.replace("/account/login");
         return null;
       }

@@ -1,0 +1,82 @@
+@import './variables';
+
+
+.container {
+    max-width: 75vw;
+    margin: auto;
+
+    select{
+        padding: 12px 25px;
+    }
+}
+
+.appointments {
+    margin-top: 1rem;
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        border: 1px solid #ddd;
+
+        th {
+            background-color: $green;
+            color: white;
+            font-weight: normal;
+        }
+
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr {
+            position: relative;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+
+
+        [class=toggle-dropdown] {
+            background-color: green;
+            padding: 1rem;
+            width: 150px;
+            height: fit-content;
+            right: 0%;
+            top: 80%;
+            position: absolute;
+
+            ul {
+                margin-left: 0;
+                padding-left: 0;
+
+                li {
+                    list-style-type: none;
+                }
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width: 800px) {
+    .container {
+        max-width: 90vw;
+
+        .appointments {
+            width: 100vw;
+            overflow-x: scroll;
+
+            table {
+                width: max-content;
+                overflow-x: scroll;
+            }
+        }
+    }
+}

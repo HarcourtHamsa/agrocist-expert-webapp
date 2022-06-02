@@ -39,7 +39,6 @@ helpers.signup = (credentials) => {
   }
 };
 
-
 helpers.forgot_password = (obj) => {
   const { email, notify } = obj;
 
@@ -51,6 +50,44 @@ helpers.forgot_password = (obj) => {
       )
       .then(({ data }) => data)
       .catch((err) => notify("error", "You don't have an account"));
+
+    return res;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+helpers.saveUserDetailsToLocalStorage = (obj) => {
+  localStorage.setItem("user", JSON.stringify(obj));
+};
+
+helpers.getUserDetailsFromLocalStorage = () => {
+  let user = localStorage.getItem("user");
+  user = JSON.parse(user);
+
+  return user;
+};
+
+helpers.logout = () => {
+  localStorage.removeItem("user");
+};
+
+helpers.getProfileDetails = (token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application-json",
+    },
+  };
+
+  try {
+    const res = axios
+      .get(
+        `https://agrocist-api-dev.herokuapp.com/api/v1/expert/profile-details`,
+        config
+      )
+      .then(({ data }) => data)
+      .catch((err) => console.log(err));
 
     return res;
   } catch (error) {

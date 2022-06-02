@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
+
 import styles from "../../styles/sass/searchBar.module.scss";
+
 import { BiSearch } from "react-icons/bi";
 import InputElement from "../InputElement";
 
+import helpers from "../../helpers/helpers";
+import avatar from "../../assets/images/avatar.svg";
+
 function SearchBar({ isOpen, setIsOpen }) {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    console.log("re-rendering....");
+    const user = helpers.getUserDetailsFromLocalStorage();
+    setUser(user);
+  }, []);
+
   return (
     <div className={styles.nav}>
       <div className="container">
@@ -23,8 +37,14 @@ function SearchBar({ isOpen, setIsOpen }) {
         </div>
 
         <div id="user-details">
-          <p>Adeoye Stephen</p>
-          <div id="avi" tabIndex={0}></div>
+          <p>{user?.user.fullname}</p>
+          <Image
+            className="avi"
+            src={avatar}
+            width={50}
+            height={50}
+            tabIndex={0}
+          />
         </div>
       </div>
     </div>

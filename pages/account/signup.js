@@ -117,27 +117,7 @@ function Signup() {
                 onChange={formik.handleChange}
                 value={formik.values.password}
               />
-              <div className="form-group">
-                <p>What type of professional are you?</p>
 
-                <div>
-                  <input
-                    type="radio"
-                    id="huey"
-                    name="drone"
-                    value="huey"
-                    checked
-                  />
-                  <label htmlFor="huey">Agronomist</label>
-                  <br />
-                </div>
-
-                <div>
-                  <input type="radio" id="dewey" name="drone" value="dewey" />
-                  <label htmlFor="dewey">Expert</label>
-                  <br />
-                </div>
-              </div>
               <SubmitButton
                 label={isLoading ? "Loading..." : "Create my account"}
               />

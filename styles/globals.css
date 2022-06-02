@@ -8,10 +8,11 @@ body {
 }
 
 @font-face {
-  font-family: 'Inter Regular';
-  src: url('../assets/fonts/GraphikRegular.otf');
+  font-family: 'Calibre';
+  src: url('../assets/fonts/Matter\ SQ\ Regular.ttf');
   font-weight: 400;
   font-style: normal;
+  font-size: 16px;
 }
 
 
@@ -38,10 +39,10 @@ body {
 
 h1,
 h2 {
-  font-family: 'PolySans' !important;
+  font-family: 'Calibre' !important;
 }
 
 * {
   box-sizing: border-box;
-  font-family: 'PolySans' !important;
+  font-family: 'Calibre' !important;
 }

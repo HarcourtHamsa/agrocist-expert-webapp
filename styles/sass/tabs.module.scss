@@ -1,0 +1,52 @@
+@import './variables';
+
+.tabs {
+    background-color: white;
+    ol {
+        list-style-type: none;
+        display: grid;
+        margin-left: 0;
+        padding-left: 0;
+        grid-template-columns: repeat(4, 1fr);
+        border-bottom: 1px solid #dee5e7;
+        background-color: $lightGreen;
+
+        li {
+            padding: 12px 25px;
+            color: gray;
+            text-align: center;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+        }
+
+        [class=active-tab] {
+            border-bottom: 2px solid $green;
+            color: white;
+            background-color: $green;
+        }
+    }
+
+    [class=tab-content] {
+        padding: 12px 25px;
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .tabs {
+        ol {
+            grid-template-columns: repeat(2, 1fr);
+
+            li {
+                font-size: 13px;
+            }
+        }
+
+        [class=tab-content] {
+            width: 100%;
+        }
+    }
+}

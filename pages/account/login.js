@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 import InputElement from "../../components/InputElement";
 import SubmitButton from "../../components/SubmitButton";
@@ -12,6 +13,7 @@ import { useFormik } from "formik";
 import helpers from "../../helpers/helpers";
 
 function Login() {
+  const Router = useRouter();
   const [isLoading, setIsLoading] = React.useState(false);
 
   const notify = (type, msg) => toast(msg, { type: type });
@@ -27,9 +29,19 @@ function Login() {
         setIsLoading(true);
         const res = await helpers.login(values);
         notify("success", "Login successful");
-        console.log(res);
+
+        helpers.saveUserDetailsToLocalStorage(res);
+
+        // redirects to dashboard
+        Router.push("/dashboard");
       } catch (error) {
-        notify("error", "Wrong email or password");
+        // user is unathorized
+        if (error.response.status === 401) {
+          notify("error", "User is unauthorized");
+          return;
+        }
+
+        notify("error", "Wrong email or password ");
       } finally {
         setIsLoading(false);
       }

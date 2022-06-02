@@ -1,17 +1,27 @@
 import React, { Children } from "react";
 import styles from "../../styles/sass/wrapper.module.scss";
 import Link from "next/link";
-// import Image from "next/image";
-import { BiHomeSmile, BiHistory, BiLogOut } from "react-icons/bi";
+import { useRouter } from "next/router";
+import { BiHomeSmile, BiHistory, BiLogOut, BiCog } from "react-icons/bi";
 import { FaRegAddressBook } from "react-icons/fa";
 import { TiMessages } from "react-icons/ti";
 import SearchBar from "./SearchBar";
+import helpers from "../../helpers/helpers";
+import VoiceSearchWidget from "./VoiceSearchWidget";
 
 function Wrapper({ children }) {
+  const Router = useRouter();
   const [isOpen, setIsOpen] = React.useState(false);
 
+  const logout = () => {
+    helpers.logout();
+    Router.push("/");
+  };
+
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} suppressHydrationWarning>
+      <VoiceSearchWidget />
+      
       <aside className={isOpen ? "active" : null}>
         <svg
           onClick={() => setIsOpen(false)}
@@ -52,7 +62,7 @@ function Wrapper({ children }) {
           })}
         </ul>
 
-        <span id="logout">
+        <span id="logout" onClick={logout}>
           <BiLogOut size={25} />
           logout
         </span>
@@ -73,8 +83,8 @@ const NAV_ITEMS = [
   },
 
   {
-    label: "Appointment",
-    href: "/dashboard",
+    label: "Appointments",
+    href: "/dashboard/appointments",
     icon: <FaRegAddressBook size={20} />,
   },
 
@@ -88,6 +98,11 @@ const NAV_ITEMS = [
     label: "History",
     href: "/dashboard",
     icon: <BiHistory size={20} />,
+  },
+  {
+    label: "Settings",
+    href: "/dashboard/settings",
+    icon: <BiCog size={20} />,
   },
 ];
 

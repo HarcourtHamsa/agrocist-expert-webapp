@@ -1,0 +1,44 @@
+@import './variables';
+
+.btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $green;
+    z-index: 100 !important;
+
+    color: white;
+
+    position: fixed;
+    right: 5%;
+    bottom: 5%;
+
+    box-shadow: 0px 1px 1px 0px gray;
+
+
+
+
+    animation: breathe 1.5s linear infinite;
+
+
+    @keyframes breathe {
+        0% {
+            transform: scale(1);
+
+
+
+        }
+
+        50% {
+            transform: scale(1.2);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+}
