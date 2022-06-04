@@ -89,7 +89,6 @@ function Signup() {
                 onChange={formik.handleChange}
                 value={formik.values.email}
               />
-
               <div className="flex">
                 <InputElement value="+234" disabled={true} readOnly />
                 <InputElement
@@ -117,11 +116,22 @@ function Signup() {
                 onChange={formik.handleChange}
                 value={formik.values.password}
               />
-
+              <div>
+                <p>Please select your profession:</p> {" "}
+                <input
+                  type="radio"
+                  id="html"
+                  name="fav_language"
+                  value="HTML"
+                />
+                  <label for="html">Agronomist</label> <br /> {" "}
+                <input type="radio" id="css" name="fav_language" value="CSS" /> {" "}
+                <label for="css">Veterinarian</label>
+              </div>{" "}
+              <br />
               <SubmitButton
                 label={isLoading ? "Loading..." : "Create my account"}
               />
-
               <span>
                 Already have an account?{" "}
                 <Link href="/account/login">Login</Link>

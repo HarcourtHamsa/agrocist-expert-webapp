@@ -8,41 +8,16 @@ body {
 }
 
 @font-face {
-  font-family: 'Calibre';
-  src: url('../assets/fonts/Matter\ SQ\ Regular.ttf');
-  font-weight: 400;
-  font-style: normal;
-  font-size: 16px;
-}
-
-
-@font-face {
-  font-family: 'PolySans Bold';
-  src: url('../assets/fonts/PolySans-Median.ef58da6c.ttf');
-  font-weight: 400;
-  font-style: normal;
-}
-
-
-@font-face {
-  font-family: 'PolySans';
-  src: url('../assets/fonts/Euclid\ Circular\ A\ Regular.d54600880dc63db716f231e546ff669e.ttf');
-  font-weight: 400;
-  font-size: 20px;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Boing';
-  src: url('../assets/fonts/FontsFree-Net-GD-Boing-Bold.ttf');
+  font-family: 'Lato';
+  src: url('../assets/fonts/Lato-Regular.ttf');
 }
 
 h1,
 h2 {
-  font-family: 'Calibre' !important;
+  font-family: 'Lato' !important;
 }
 
 * {
   box-sizing: border-box;
-  font-family: 'Calibre' !important;
+  font-family: 'Lato' !important;
 }

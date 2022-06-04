@@ -29,9 +29,11 @@
                     width: 450px;
                 }
 
-                button {
+                a {
                     @include btn;
+                    padding: 12px 25px;
                     background-color: $yellow;
+                    text-decoration: none;
                     margin-top: 1rem;
                 }
             }
@@ -109,10 +111,12 @@
                         width: 70%;
                     }
 
-                    button {
+                    a {
                         @include btn;
                         background-color: $yellow;
-                        margin-top: 1rem;
+                        margin-top: 3rem !important;
+                        padding: 12px 25px;
+                        text-decoration: none;
                     }
                 }
 

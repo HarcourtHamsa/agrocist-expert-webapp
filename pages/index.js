@@ -17,7 +17,7 @@ import chickens from "../assets/images/chickens.png";
 import SocialCard from "../components/SocialCard";
 import Footer from "../components/Footer";
 import React from "react";
-// import Testimanial from "../components/Testimonial";
+import Testimanial from "../components/Testimonial";
 
 export default function Home() {
   return (
@@ -37,7 +37,10 @@ export default function Home() {
               With Agrocist, we help supercharge your agribusinesses using AI
               technology
             </p>
-            <button>Download free</button>
+
+            <a href="https://drive.google.com/file/d/1SfZf3nb8V0OpDOPHD3UySNttITW5_89K/view?usp=drivesdk">
+              Download free
+            </a>
           </div>
 
           <div>
@@ -55,7 +58,9 @@ export default function Home() {
                 Using AI technology we help farmers diagnose and prevent pests
                 and diseases one picture at a time.
               </p>
-              <button>Download</button>
+              <a href="https://drive.google.com/file/d/1SfZf3nb8V0OpDOPHD3UySNttITW5_89K/view?usp=drivesdk">
+                Download
+              </a>
             </div>
             <div>
               <Image src={smilingMan} alt="A man smiling" />
@@ -145,7 +150,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* <Testimanial /> */}
+      <Testimanial />
 
       <Footer />
     </>

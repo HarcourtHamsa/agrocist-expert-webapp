@@ -1,16 +1,87 @@
-// .container {
-//     width: 80vw;
-//     margin: auto;
-//     height: 100vh;
-//     background-color: red;
+@import './variables';
 
-//     [class~=slide] {
-//         width: 100%;
-//         display: flex !important;
-//         flex-direction: row;
-//         justify-content: space-between;
-//         gap: 3rem;
-//         background-color: orangered;
-        
-//     }
-// }
+
+.h3 {
+    font-size: 2.5rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.carousel {
+    overflow: hidden;
+
+    [class=inner] {
+        white-space: nowrap;
+        transition: 0.3s;
+    }
+
+    [class=indicators] {
+        width: 90vw;
+        margin: auto;
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-200%) translateX(5%);
+        // background-color: red;
+
+        button {
+            border: 0;
+            width: 50px;
+            height: 100px;
+            border-radius: 3px;
+            background-color: $green;
+        }
+    }
+}
+
+.carousel_item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    background-color: white;
+    color: black;
+
+    [class=card] {
+        width: 500px;
+        height: fit-content;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 1px 1px 0px gray;
+        background-color: $lightGreen;
+    }
+}
+
+@media only screen and (max-width: 948px) {
+    .h3 {
+        font-size: 1.75rem;
+    }
+
+    .carousel_item {
+        box-sizing: content-box;
+
+        [class=card] {
+            white-space: normal;
+            width: 70vw;
+            margin: auto;
+        }
+    }
+
+    .carousel {
+
+        [class=indicators] {
+            transform: translateY(-300%) translateX(5%);
+
+            button {
+                border: 0;
+                width: 30px;
+                height: 50px;
+                border-radius: 3px;
+                background-color: $green;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+}
