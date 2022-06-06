@@ -56,7 +56,8 @@ export default function Home() {
               <h2>Free mobile Crop and Animal doctor</h2>
               <p>
                 Using AI technology we help farmers diagnose and prevent pests
-                and diseases one picture at a time.
+                and diseases one picture at a time. Our proprietary technology
+                can be used with or without internet connection
               </p>
               <a href="https://drive.google.com/file/d/1SfZf3nb8V0OpDOPHD3UySNttITW5_89K/view?usp=drivesdk">
                 Download
@@ -76,15 +77,16 @@ export default function Home() {
               <Image src={diagnose} alt="" />
               <h3>Diagnose and Treat</h3>
               <p>
-                Take the picture of your diseased plant/Animal and agrocist
-                mobile app provides the diagnosis and treatments on the go
+                Diagnose and treat: Take the picture of your diseased
+                plant/Animal with your mobile phone and AGROCIST app provides
+                the diagnosis and treatments on the go
               </p>
             </div>
 
             <div>
               <Image src={plant} alt="" />
               <h3>AGRO Input</h3>
-              <p>Locate a nearby Agro-Input in your Area.</p>
+              <p>Agrocist Helps you locate agro-input shop in your area</p>
             </div>
 
             <div>
@@ -106,10 +108,10 @@ export default function Home() {
               <Image src={agronomist} alt="a farmer checking her crops" />
             </div>
             <div>
-              <h2>Are you an agro expert agronomist or Vet?</h2>
+              <h2>Boost your farm productivity</h2>
               <p>
-                As a an agronomist or a Vet, you can join our online community
-                to access farmers, real time data insights and drive more sales
+                With the help of AGROCIST app, farmers can access real time
+                advisory support to increase their productivity.
               </p>
               <button>Get started</button>
             </div>
