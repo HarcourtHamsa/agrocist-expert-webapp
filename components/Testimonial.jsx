@@ -54,7 +54,7 @@ function Testimonial() {
     <Carousel>
       <CarouselItem>
         <div className="card">
-          <p>"This app has helped me saved a lot of money on my farm"</p>
+          <p>&quot;This app has helped me saved a lot of money on my farm&quot;</p>
 
           <ul>
             <li>Adamu Kenny</li>
@@ -63,7 +63,7 @@ function Testimonial() {
       </CarouselItem>
       <CarouselItem>
         <div className="card">
-          <p>"My Animals are now responding very and no more death"</p>
+          <p>&quot;My Animals are now responding very and no more death&quot;</p>
 
           <ul>
             <li>Ajibade Garba</li>

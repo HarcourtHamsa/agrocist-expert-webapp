@@ -124,9 +124,9 @@ function Signup() {
                   name="fav_language"
                   value="HTML"
                 />
-                  <label for="html">Agronomist</label> <br /> {" "}
+                  <label htmlFor="html">Agronomist</label> <br /> {" "}
                 <input type="radio" id="css" name="fav_language" value="CSS" /> {" "}
-                <label for="css">Veterinarian</label>
+                <label htmlFor="css">Veterinarian</label>
               </div>{" "}
               <br />
               <SubmitButton

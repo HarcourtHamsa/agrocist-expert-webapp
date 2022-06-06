@@ -39,7 +39,7 @@ function Settings() {
       <Wrapper>
         <div className={styles.container}>
           <div className="user-info">
-            <Image className="avi" src={avatar} width={100} height={100} />
+            <Image className="avi" src={avatar} width={100} height={100} alt="" />
 
             <div className="card">
               <span>PROFILE</span>

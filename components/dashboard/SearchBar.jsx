@@ -44,6 +44,7 @@ function SearchBar({ isOpen, setIsOpen }) {
             width={50}
             height={50}
             tabIndex={0}
+            alt=""
           />
         </div>
       </div>

@@ -57,7 +57,7 @@ function Appointments() {
                       gap: "1rem",
                     }}
                   >
-                    <Image src={avatar} width={30} height={30} />
+                    <Image src={avatar} width={30} height={30} alt=""/>
                     Remi Adams
                   </td>
                   <td>0985049830</td>
