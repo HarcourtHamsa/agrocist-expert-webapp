@@ -27,6 +27,9 @@
 
                 p {
                     width: 450px;
+                    // background-color: red;
+                    font-size: 20px !important;
+                    margin-bottom: 2rem
                 }
 
                 a {
@@ -109,6 +112,8 @@
 
                     p {
                         width: 70%;
+                        font-size: 20px;
+                        margin-bottom: 3rem;
                     }
 
                     a {
@@ -117,6 +122,7 @@
                         margin-top: 3rem !important;
                         padding: 12px 25px;
                         text-decoration: none;
+                        box-shadow: 2px 3px 27px rgba(0, 0, 0, 0.28);
                     }
                 }
 
@@ -202,6 +208,7 @@
                 padding: 12px 24px;
                 transition: .5s;
                 color: $green;
+                border-radius: 17px;
 
                 h3 {
                     font-weight: normal;
@@ -210,7 +217,7 @@
 
                 p {
                     text-align: initial;
-                    // font-size: 14px;
+                    font-size: 18px;
                 }
 
                 img {
@@ -221,7 +228,6 @@
                     background-color: $green;
                     color: white;
                     cursor: pointer;
-                    border-radius: $radius;
                 }
             }
         }
@@ -277,13 +283,16 @@
                     }
 
                     p {
-                        width: 70%;
+                        // width: 70%;
+                        font-size: 20px;
+                        margin-bottom: 2rem
                     }
 
                     button {
                         @include btn;
                         background-color: $yellow;
                         margin-top: 1rem;
+                        box-shadow: 2px 3px 27px rgba(0, 0, 0, 0.28);
                     }
                 }
             }
@@ -346,10 +355,17 @@
             gap: 2rem;
 
             div {
+                height: fit-content;
+                // background-color: red;
                 &:first-child {
                     h2 {
                         font-size: 2.5rem;
                         line-height: 1.5;
+                    }
+
+                    p{
+                        font-size: 20px;
+                        // background-color: red;
                     }
                 }
 

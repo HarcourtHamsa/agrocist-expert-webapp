@@ -3,7 +3,15 @@ import styles from "../../styles/sass/wrapper.module.scss";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { BiHomeSmile, BiHistory, BiLogOut, BiCog } from "react-icons/bi";
-import { FaRegAddressBook } from "react-icons/fa";
+import {
+  FaRegAddressBook,
+  FaDisease,
+  FaWallet,
+  FaCog,
+  FaHistory,
+  FaHome,
+  FaBookMedical,
+} from "react-icons/fa";
 import { TiMessages } from "react-icons/ti";
 import SearchBar from "./SearchBar";
 import helpers from "../../helpers/helpers";
@@ -20,8 +28,8 @@ function Wrapper({ children }) {
 
   return (
     <div className={styles.wrapper} suppressHydrationWarning>
-      <VoiceSearchWidget />
-      
+      {/* <VoiceSearchWidget /> */}
+
       <aside className={isOpen ? "active" : null}>
         <svg
           onClick={() => setIsOpen(false)}
@@ -79,30 +87,36 @@ const NAV_ITEMS = [
   {
     label: "Dashboard",
     href: "/dashboard",
-    icon: <BiHomeSmile size={20} />,
+    icon: <FaHome size={20} />,
   },
 
   {
     label: "Appointments",
     href: "/dashboard/appointments",
-    icon: <FaRegAddressBook size={20} />,
+    icon: <FaBookMedical size={20} />,
   },
 
   {
-    label: "Messages",
-    href: "/dashboard",
-    icon: <TiMessages size={20} />,
+    label: "Disease Intelligence",
+    href: "/dashboard/",
+    icon: <FaDisease size={20} />,
+  },
+
+  {
+    label: "Wallet",
+    href: "/dashboard/",
+    icon: <FaWallet size={20} />,
   },
 
   {
     label: "History",
     href: "/dashboard",
-    icon: <BiHistory size={20} />,
+    icon: <FaHistory size={20} />,
   },
   {
     label: "Settings",
     href: "/dashboard/settings",
-    icon: <BiCog size={20} />,
+    icon: <FaCog size={20} />,
   },
 ];
 

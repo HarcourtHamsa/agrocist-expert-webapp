@@ -32,7 +32,7 @@ export default function Home() {
         <Navbar />
         <div id="jumbotron">
           <div>
-            <h1>Farm advisory made easy, affordable and quick</h1>
+            <h1>Farm advisory made easy quick and affordable</h1>
             <p>
               With Agrocist, we help supercharge your agribusinesses using AI
               technology

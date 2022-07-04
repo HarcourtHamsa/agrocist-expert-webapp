@@ -56,7 +56,7 @@ function Login() {
       </Head>
 
       <main className={styles.page}>
-        <ToastContainer position="top-center" hideProgressBar={true} />
+        <ToastContainer position="top-center" hideProgressBar={true} theme='dark' />
         <div className={"container"}>
           <div className={"card"}>
             <h3>Login</h3>

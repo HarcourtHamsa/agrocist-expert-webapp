@@ -12,23 +12,10 @@ function MyApp({ Component, pageProps }) {
   const [isLoading, setIsLoading] = useState(false);
   const Router = useRouter();
 
-  useEffect(() => {
-    const handleStart = (url) => {
-      Router.asPath !== url && setIsLoading(true);
-    };
-
-    const handleComplete = (url) => {
-      Router.asPath === url && setIsLoading(false);
-    };
-
-    Router.events.on("routeChangeStart", handleStart);
-    Router.events.on("routeChangeComplete", handleComplete);
-  });
-
   return (
     <AuthProvider>
       <QueryClientProvider client={queryClient}>
-        {isLoading ? <Loader /> : <Component {...pageProps} />}
+        <Component {...pageProps} />
       </QueryClientProvider>
     </AuthProvider>
   );
