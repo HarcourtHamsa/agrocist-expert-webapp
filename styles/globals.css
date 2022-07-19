@@ -3,26 +3,36 @@ body {
   padding: 0;
   margin: 0;
   line-height: 1.8;
-  /* font-size: 18px; */
+  font-size: 18px;
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
 @font-face {
-  font-family: 'Lato';
-  src: url('../assets/fonts/Lato-Regular.ttf');
+  font-family: "Lato";
+  src: url("../assets/fonts/Calibre.28ac2dda.ttf");
 }
 
 h1,
 h2 {
-  font-family: 'Lato' !important;
+  font-family: "Lato" !important;
+  line-height: 1.3 !important;
 }
 
-p, a{
+h1 {
+  font-size: clamp(1.85rem, 3.4vw, 5rem) !important;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 5rem) !important;
+}
+
+p,
+a {
   font-size: 1rem !important;
 }
 
 * {
   box-sizing: border-box;
-  font-family: 'Lato' !important;
+  font-family: "Lato" !important;
 }

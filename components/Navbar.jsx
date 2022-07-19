@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import styles from "../styles/sass/navbar.module.scss";
 
-import logo from "../assets/images/transparent-logo.png";
+import logo from "../assets/images/logo.svg";
 import Image from "next/image";
 
 function Navbar() {

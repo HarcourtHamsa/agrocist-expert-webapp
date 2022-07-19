@@ -1,23 +1,66 @@
+import React from "react";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
+
+// components
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+
 import styles from "../styles/sass/index.module.scss";
 
 // assets
-import mobile from "../assets/images/mobile.png";
-import smilingMan from "../assets/images/smiling-man.png";
-import diagnose from "../assets/images/diagnose.svg";
-import plant from "../assets/images/plant.svg";
-import calendar from "../assets/images/calendar.svg";
-import agronomist from "../assets/images/agronomist.png";
+import hero from "../assets/images/hero.png";
+import farmers from "../assets/images/farmers.png";
+import insight from "../assets/images/insight.png";
+import contribute from "../assets/images/contribute.png";
+import calendar from "../assets/images/calendar.png";
 
-import disease from "../assets/images/crop-disease.png";
-import chickens from "../assets/images/chickens.png";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionItemHeading,
+  AccordionItemButton,
+  AccordionItemPanel,
+} from "react-accessible-accordion";
 
-import SocialCard from "../components/SocialCard";
-import Footer from "../components/Footer";
-import React from "react";
-import Testimanial from "../components/Testimonial";
+// Demo styles, see 'Styles' section below for some notes on use.
+import "react-accessible-accordion/dist/fancy-example.css";
+
+const ACCORDION_ITEMS = [
+  {
+    title: "Why Agrocist?",
+    body: `
+    Agrocist is building the largest technology driven
+    agriculture experts community in Africa. 
+    Be a part of the future of work in agriculture 
+  `,
+  },
+  {
+    title: "How it works",
+    body: `
+    Sign up and set up your profile. 
+    It takes a few minutes to do that. 
+    Start receiving bookings from farmers online. 
+    and contribute freely to the online community to increase your 
+    ratings
+  `,
+  },
+  {
+    title: "How to use Agrocist",
+    body: `
+    Agrocist expert community is built for farmers and agro experts in mind. Once you have successfully signed up, farmers will be able to access your profile and book your service online. 
+    You get notifications in app and via emails once your service is booked which you are to confirm within 30 mins.
+     Reach out to farmers accordingly via calls, farm visits etc to deliver your services to them 
+  `,
+  },
+  {
+    title: "Is Agrocist Free to use",
+    body: `
+    For now YES!  Though a premium will be placed in few months time. The earlier you sign up the better.
+  `,
+  },
+];
 
 export default function Home() {
   return (
@@ -28,43 +71,40 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Navbar />
       <header className={styles.header}>
-        <Navbar />
-        <div id="jumbotron">
-          <div>
-            <h1>Farm advisory made easy quick and affordable</h1>
+        <div className={` bloc `} id="bloc1">
+          <span>
+            <h1>A digital Community for agro experts</h1>
             <p>
-              With Agrocist, we help supercharge your agribusinesses using AI
-              technology
+              We are building an online community for veterinarians,
+              agronomists, agriculturists etc that operate in agric value chain
             </p>
+            <Link href={"/"}>Get Started</Link>
+          </span>
 
-            <a href="https://drive.google.com/file/d/1SfZf3nb8V0OpDOPHD3UySNttITW5_89K/view?usp=drivesdk">
-              Download free
-            </a>
-          </div>
-
-          <div>
-            <Image src={mobile} alt="" />
-          </div>
+          <Image src={hero} alt="" id="hero-img" />
         </div>
+        <div className={` bloc `} id="bloc2"></div>
       </header>
 
       <section className={styles.section1}>
         <div className="container">
           <div className="grid">
             <div>
-              <h2>Free mobile Crop and Animal doctor</h2>
-              <p>
-                Using AI technology we help farmers diagnose and prevent pests
-                and diseases one picture at a time. Our proprietary technology
-                can be used with or without internet connection
-              </p>
-              <a href="https://drive.google.com/file/d/1SfZf3nb8V0OpDOPHD3UySNttITW5_89K/view?usp=drivesdk">
-                Download
-              </a>
+              <Image src={farmers} alt="farmers" />
             </div>
+
             <div>
-              <Image src={smilingMan} alt="A man smiling" />
+              <h2>Worried about low customers and income?</h2>
+              <p>
+                Join our community to reach more farmers, access data insights
+                and drive more sales
+              </p>
+              {/* <a href="https://drive.google.com/file/d/1SfZf3nb8V0OpDOPHD3UySNttITW5_89K/view?usp=drivesdk">
+                Download
+              </a> */}
+              <Link href="/account/login">Get Started</Link>
             </div>
           </div>
         </div>
@@ -74,85 +114,54 @@ export default function Home() {
         <div className="container">
           <div className="grid">
             <div>
-              <Image src={diagnose} alt="" />
-              <h3>Diagnose and Treat</h3>
-              <p>
-                Diagnose and treat: Take the picture of your diseased
-                plant/Animal with your mobile phone and AGROCIST app provides
-                the diagnosis and treatments on the go
-              </p>
-            </div>
-
-            <div>
-              <Image src={plant} alt="" />
-              <h3>AGRO Input</h3>
-              <p>Agrocist Helps you locate agro-input shop in your area</p>
-            </div>
-
-            <div>
               <Image src={calendar} alt="" />
-              <h3>Farm Calendar</h3>
+              <h3>Easy Paid Appointment</h3>
               <p>
-                Track all your farm activities with reminder notifications for
-                easy farming experience
+                Receive paid bookings from farmers in need of your services and
+                easily schedule a consultation time
+              </p>
+            </div>
+
+            <div>
+              <Image src={insight} alt="" />
+              <h3>Data Insights</h3>
+              <p>
+                Access data insights to help improve your services and practices
+              </p>
+            </div>
+
+            <div>
+              <Image src={contribute} alt="" />
+              <h3>Contribute</h3>
+              <p>
+                Contribute freely to the challenges of farmers online and get
+                rated and noticed.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className={styles.section3}>
+      <section className={styles.faq}>
         <div className="container">
-          <div className="grid">
-            <div>
-              <Image src={agronomist} alt="a farmer checking her crops" />
-            </div>
-            <div>
-              <h2>Boost your farm productivity</h2>
-              <p>
-                With the help of AGROCIST app, farmers can access real time
-                advisory support to increase their productivity.
-              </p>
-              <button>Get started</button>
-            </div>
-          </div>
+          <h2>Frequently asked question</h2>
+
+          <Accordion>
+            {ACCORDION_ITEMS.map((accordion) => {
+              return (
+                <AccordionItem>
+                  <AccordionItemHeading>
+                    <AccordionItemButton>{accordion.title}</AccordionItemButton>
+                  </AccordionItemHeading>
+                  <AccordionItemPanel>
+                    <p>{accordion.body}</p>
+                  </AccordionItemPanel>
+                </AccordionItem>
+              );
+            })}
+          </Accordion>
         </div>
       </section>
-
-      <section className={styles.section4}>
-        <div className="container">
-          <div className="grid">
-            <div>
-              <h2>Join the Community</h2>
-            </div>
-            <div className="card-container">
-              <SocialCard
-                username={"Ajayi Paul"}
-                location={"Osogbo, Osun state"}
-                msg="
-                My Crops started showing this since last 
-                week and i dont know what to do. Please help"
-                likes={110}
-                comments={211}
-                image={disease}
-              />
-              <SocialCard
-                username={"Eze Ben"}
-                location={"Nnewi, Abia state"}
-                msg="
-                My Crops started showing this since 
-                last week and i dont know what to do. 
-                Please help"
-                likes={110}
-                comments={211}
-                image={chickens}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <Testimanial />
 
       <Footer />
     </>
